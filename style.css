@@ -1,0 +1,143 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #eef3f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Высота, равная высоте логотипа */
+}
+
+header img {
+    width: 220px;
+    display: block;
+}
+
+header h1, header h3 {
+    display: none;
+}
+
+nav {
+    background-color: #365276;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+#content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    display: none;
+}
+
+/* Специфичные стили для разных страниц */
+body:not(:has(title[title="Велопрокат С Ветерком"])) {
+    background-color: #eef3f9;
+}
+
+body:has(title[title="Велопрокат С Ветерком"]) {
+    background-image: url("prokat.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+body:has(title[title="Велопрокат С Ветерком"]) #content {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* Стили для каталога */
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.catalog-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.catalog-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.prokat-image-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.prokat-image {
+    width: 100%;
+    display: block;
+}
+
+.hero-image {
+    position: relative; /* Важно для позиционирования текста поверх изображения */
+    width: 100%;       /* Занимает всю ширину экрана */
+    height: 500px;      /* Установите желаемую высоту */
+    overflow: hidden;   /* Обрезает изображение, если оно выходит за границы контейнера */
+}
+
+.hero-image img {
+    width: 100%;       /* Растягивает изображение на всю ширину контейнера */
+    height: 100%;       /* Растягивает изображение на всю высоту контейнера */
+    object-fit: cover;   /* Важно для правильного масштабирования изображения */
+    filter: brightness(50%); /* Затемнение изображения (можно настроить значение) */
+}
+
+.hero-text {
+    position: absolute; /* Абсолютное позиционирование относительно .hero-image */
+    top: 50%;           /* Размещает текст по центру по вертикали */
+    left: 50%;          /* Размещает текст по центру по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирует текст идеально */
+    color: #eef3f9;      /* Цвет текста */
+    text-align: center;  /* Выравнивание текста по центру */
+    font-size: 2em;      /* Размер шрифта (можно настроить) */
+    width: 100%;          /* Чтобы текст занимал всю ширину контейнера */
+}
+
+.hero-text h1 {
+    font-size: 3em; /* Размер шрифта заголовка */
+    margin-bottom: 10px; /* Отступ между заголовком и параграфом */
+}
+
+.hero-text p {
+    font-size: 1.5em; /* Размер шрифта параграфа */
+}
